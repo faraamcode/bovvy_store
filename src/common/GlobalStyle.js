@@ -28,10 +28,12 @@ export const Wrapper = styled.div`
 
 export const H1 = styled.h1`
   font-family: 'Work Sans';
-  font-size: 100px;
+  font-size: 80px;
   font-style: normal;
   font-weight: 700;
   line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
 
   @media (max-width: 500px) {
     font-size: 40px;
@@ -39,11 +41,9 @@ export const H1 = styled.h1`
   }
   @media (min-width: 501px) and (max-width: 750px) {
     font-size: 50px;
-    margin-bottom: 5px;
   }
   @media (min-width: 751px) and (max-width: 1000px) {
     font-size: 60px;
-    margin-bottom: 30px;
   }
 `
 
@@ -66,9 +66,10 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   font-size: 50px;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1;
   font-weight: 300;
-
+  color: '#802c6e';
+  margin: 0;
   @media (max-width: 500px) {
     font-size: 20px;
   }
