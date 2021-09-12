@@ -31,23 +31,33 @@ const LogoElement = () => {
 }
 const Header = () => {
   return (
-    <Wrapper>
-      <LogoElement />
-      <NavLinksElement />
-      <ToggleIcon />
-    </Wrapper>
+    <Nav>
+      <Wrapper>
+        <LogoElement />
+        <NavLinksElement />
+        <ToggleIcon />
+      </Wrapper>
+    </Nav>
   )
 }
 
 export default Header
+const Nav = styled.nav`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  border-bottom: 2px solid ${Colors.primary2};
+  background: ${Colors.primary};
+`
 const Wrapper = styled.div`
+  max-width: 1300px;
   width: 100%;
   height: 90px;
-  background: ${Colors.primary};
-  border-bottom: 2px solid ${Colors.primary2};
   display: flex;
   justify-content: space-between;
-  padding: 10px 80px;
+  padding: 10px 0px;
   @media (max-width: 400px) {
     padding: 10px 30px;
   }
@@ -61,6 +71,7 @@ const Wrapper = styled.div`
 `
 
 const LinksContainer = styled.ul`
+  justify-self: start;
   display: flex;
   align-items: center;
   min-width: 300px;

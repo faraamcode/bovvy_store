@@ -4,15 +4,17 @@ import styled from 'styled-components'
 import Colors from '../../common/color'
 import { DarkShadow } from '../../common/GlobalStyle'
 
-export const ProductCard = ({ id, title, category, price, image, rating }) => {
+export const ProductCard = ({ product }) => {
+  const { id, title, category, price, image, rating } = product
+
   return (
-    <Wrapper to={id}>
+    <Wrapper to={`${id}`}>
       <ImageWrapper>
         <img src={image} alt={title} />
       </ImageWrapper>
+      <h5>{title.length > 40 ? title.slice(0, 40) : title}</h5>
       <OtherDetailStyle>
         <div>
-          <h5>{title}</h5>
           <span>{category}</span>
           <h6>Rating:{rating?.rate}</h6>
         </div>
@@ -23,9 +25,14 @@ export const ProductCard = ({ id, title, category, price, image, rating }) => {
 }
 
 const Wrapper = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
   min-width: 250px;
+  margin-bottom: 40px;
   width: 300px;
-  height: 400px;
+  height: 500px;
+  padding: 10px;
   box-shadow: ${DarkShadow};
   background: ${Colors.primary};
   text-decoration: none;
@@ -39,7 +46,7 @@ const Wrapper = styled(Link)`
   h5 {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 15px;
   }
   h6 {
     margin-top: 10px;
@@ -65,5 +72,9 @@ const PriceStyle = styled.div`
 
 const OtherDetailStyle = styled.div`
   display: flex;
+  flex: 1;
   justify-content: space-between;
+  div {
+    align-self: end;
+  }
 `
